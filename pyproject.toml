@@ -1,0 +1,96 @@
+[project]
+name = "reflex-web"
+version = "0.0.1"
+authors = [
+    { name = "Nikhil Rao", email = "nikhil@reflex.dev" },
+    { name = "Alek Petuskey", email = "alek@reflex.dev" },
+]
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "email-validator",
+    "fastapi",
+    "flexdown",
+    "googletrans-py",
+    "mistletoe",
+    "openai",
+    "pandas",
+    "plotly-express",
+    "posthog",
+    "psycopg[binary]",
+    "python-frontmatter",
+    "reflex @ git+https://github.com/reflex-dev/reflex@main",
+    "reflex-enterprise",
+    "reflex-hosting-cli",
+    "reflex-image-zoom",
+    "reflex-pyplot",
+    "reflex-ui @ git+https://github.com/reflex-dev/reflex-ui@main",
+    "replicate",
+    "requests",
+    "ruff-format",
+    "typesense",
+]
+
+[dependency-groups]
+dev = [
+    "playwright",
+    "pre-commit",
+    "pytest-playwright",
+    "pytest",
+    "ruff",
+    "uvicorn",
+]
+
+[tool.setuptools.packages.find]
+where = ["pcweb"]
+
+[tool.ruff]
+target-version = "py311"
+output-format = "concise"
+lint.isort.split-on-trailing-comma = false
+lint.select = [
+    "ANN001",
+    "B",
+    "C4",
+    "D",
+    "E",
+    "ERA",
+    "F",
+    "FURB",
+    "I",
+    "N",
+    "PERF",
+    "PGH",
+    "RUF",
+    "SIM",
+    "T",
+    "TRY",
+    "W",
+]
+lint.ignore = [
+    "ANN001",
+    "B008",
+    "D100",
+    "D101",
+    "D102",
+    "D103",
+    "D104",
+    "D107",
+    "D205",
+    "E402",
+    "E501",
+    "ERA001",
+    "F403",
+    "RUF006",
+    "RUF008",
+    "RUF012",
+    "SIM115",
+    "T201",
+    "TRY0",
+    "TRY300",
+]
+lint.pydocstyle.convention = "google"
+lint.allowed-confusables = ['’']
+
+[tool.uv]
+required-version = ">=0.7.0"

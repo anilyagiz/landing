@@ -1,0 +1,14 @@
+[phases.setup]
+nixPkgs = ["python312", "nodejs_20"]
+
+[phases.install]
+cmds = [
+  "curl -LsSf https://astral.sh/uv/install.sh | sh",
+  "~/.local/bin/uv sync --locked"
+]
+
+[phases.build]
+cmds = ["~/.local/bin/uv run reflex export --frontend-only --no-zip"]
+
+[start]
+cmd = "~/.local/bin/uv run reflex run --env prod"

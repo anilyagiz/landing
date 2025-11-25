@@ -1,0 +1,6 @@
+{
+  "name": "Singularity Landing - Local Overrides",
+  "containerEnv": {
+    "REFLEX_ACCESS_TOKEN": "c616407c-abfa-4156-b3b2-4c767f73078a"
+  }
+}

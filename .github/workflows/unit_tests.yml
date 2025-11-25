@@ -1,0 +1,69 @@
+name: unit-tests
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.id }}
+  cancel-in-progress: true
+
+env:
+  OPENAI_API_KEY: dummy
+  TELEMETRY_ENABLED: false
+  REFLEX_DEP: "git+https://github.com/reflex-dev/reflex@main"
+  PYTHONUNBUFFERED: 1
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+  workflow_dispatch:
+    inputs:
+      reflex_dep:
+        description: "Reflex dependency (full specifier)"
+
+permissions:
+  contents: read
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  unit-tests:
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest]
+        python-version: ["3.11", "3.12"]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install the latest version of uv
+        uses: astral-sh/setup-uv@v6
+        with:
+          python-version: ${{ matrix.python-version }}
+          activate-environment: true
+
+      - name: Install the project
+        run: uv sync --locked --all-extras --dev
+
+      - name: Install Requirements for reflex-web and reflex
+        run: uv pip install '${{ github.event.inputs.reflex_dep || env.REFLEX_DEP }}'
+
+      - name: Install Playwright
+        run: uv run playwright install --with-deps
+
+      - name: Initialize reflex
+        run: reflex init
+
+      - name: Run unit tests
+        run: pytest tests
+
+      - name: Upload test failure videos
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-videos-${{ matrix.os }}-${{ matrix.python-version }}
+          path: test-videos/
+          if-no-files-found: ignore

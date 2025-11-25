@@ -1,0 +1,262 @@
+import reflex as rx
+import reflex_ui as ui
+from reflex.experimental import ClientStateVar
+
+from pcweb.components.icons.icons import get_icon
+from pcweb.pages.framework.views.companies import companies as index_companies
+
+company_cs = ClientStateVar.create("company", "")
+area_x_pos = ClientStateVar.create(var_name="area_x_pos", default=0)
+area_y_pos = ClientStateVar.create(var_name="area_y_pos", default=0)
+area_opacity = ClientStateVar.create(var_name="area_opacity", default=0)
+
+companies_list = [
+    "apple",
+    "microsoft",
+    "amazon",
+    "fastly",
+    "accenture",
+    "ibm",
+    "unicef",
+    "autodesk",
+    "STATS",
+    "sellerx",
+    "ford",
+    "paloalto",
+    "bosch",
+    "dell",
+    "twilio",
+    "rappi",
+    "nike",
+]
+
+companies_case_studies = {
+    "dell": {
+        "company_name": "Dell",
+        "quote": """Singularity's AutoSecOps detected a firmware vulnerability in our server fleet 72 hours before public disclosure. Zero-day response without manual intervention.""",
+        "person": "James Liu",
+        "picture": "/favicon.ico",
+        "role": "VP of Infrastructure Security",
+    },
+    "autodesk": {
+        "company_name": "Autodesk",
+        "quote": "Managing security for 50,000 distributed endpoints was impossible with legacy tools. Singularity delivered autonomous defense and predictive maintenance in one unified platform.",
+        "person": "Paolo Rossi",
+        "picture": "/favicon.ico",
+        "role": "CISO",
+        "url": "/customers/autodesk",
+    },
+    "fastly": {
+        "company_name": "Fastly",
+        "quote": "Our MTTD dropped from hours to seconds after deploying Singularity. The unified threat intelligence eliminated our entire integration layer.",
+        "person": "Emanuele Bonura",
+        "picture": "/favicon.ico",
+        "role": "Director of Security Operations",
+    },
+    # "unicef": {
+    #     "company_name": "Unicef",
+    #     "quote": """Reflex made it easy to focus on building my app with pure Python and integrate the components I needed without the hassle of learning new front-end frameworks.
+    #     It integrates seamlessly with Microsoft Azure, making deployment and scaling smooth and efficient.""",
+    #     "person": "Lakshmi",
+    #     "picture": "/favicon.ico",
+    #     "role": "Data Science Specialist",
+    # },
+    "sellerx": {
+        "company_name": "SellerX",
+        "quote": """Processing 500,000 daily transactions, we needed real-time fraud detection with zero latency. Singularity prevented $2.1M in fraud last quarter alone.""",
+        "person": "Mike Chen",
+        "picture": "/favicon.ico",
+        "role": "Head of Security Engineering",
+        "url": "/customers/sellerx",
+    },
+}
+
+companies_case_studies_var = rx.Var.create(companies_case_studies)
+
+
+def stat(stat: str, text: str) -> rx.Component:
+    return rx.el.section(
+        get_icon("feather_unstyled", class_name="text-primary-9"),
+        rx.box(
+            rx.text(
+                stat,
+                class_name="text-3xl inline-block text-slate-12 font-semibold w-full text-balance text-center",
+            ),
+            rx.text(text, class_name="text-sm text-slate-9 font-medium"),
+            class_name="flex flex-col justify-center items-center text-center text-nowrap",
+        ),
+        get_icon("feather_unstyled", class_name="scale-x-[-1] text-primary-9"),
+        class_name="flex flex-row items-center gap-4 justify-center",
+    )
+
+
+def quote_box(company: str) -> rx.Component:
+    case_study = companies_case_studies_var[company]
+    return rx.fragment(
+        rx.text(
+            f"“{case_study['quote']}”",
+            class_name="text-xs text-slate-12 font-medium animate-fade animate-duration-[505ms] animate-ease-out animate-fill-both",
+        ),
+        rx.box(
+            ui.gradient_profile(
+                seed=case_study["person"],
+                class_name="size-6 rounded-full",
+            ),
+            rx.box(
+                rx.text(
+                    f"{case_study['person']}",
+                    class_name="text-xs text-slate-10 font-medium",
+                ),
+                rx.text(
+                    case_study["role"],
+                    class_name="text-xs text-slate-9 font-medium",
+                ),
+            ),
+            class_name="flex flex-row items-center gap-2 w-full animate-fade animate-duration-[550ms] animate-ease-out animate-fill-both",
+        ),
+    )
+
+
+def case_study_badge() -> rx.Component:
+    return rx.box(
+        rx.text("Case Study", class_name="text-xs text-violet-9 font-semibold"),
+        get_icon(
+            "chevron_right",
+            class_name="size-3",
+        ),
+        class_name="absolute bottom-4 right-4 bg-violet-3 text-violet-9 group-hover:bg-violet-4 group-hover:border-violet-7 text-xs font-semibold px-2 py-1 rounded-full transition-colors flex flex-row items-center gap-1 scale-[0.85] pointer-events-none",
+    )
+
+
+def quote_badge() -> rx.Component:
+    return rx.box(
+        rx.text("Quote", class_name="text-xs text-violet-9 font-semibold"),
+        # ui.icon("QuoteDownIcon", class_name="size-3"),
+        class_name="absolute bottom-4 right-4 bg-violet-3 text-violet-9 group-hover:bg-violet-4 group-hover:border-violet-7 text-xs font-semibold px-2 py-1 rounded-full transition-colors flex flex-row items-center gap-1 scale-[0.85] pointer-events-none",
+    )
+
+
+@rx.memo
+def company_card(name: str, id: str) -> rx.Component:
+    area_x_pos = ClientStateVar.create(
+        var_name="area_x_pos", default=0, global_ref=False
+    )
+    area_y_pos = ClientStateVar.create(
+        var_name="area_y_pos", default=0, global_ref=False
+    )
+    area_opacity = ClientStateVar.create(
+        var_name="area_opacity", default=0, global_ref=False
+    )
+    return rx.box(
+        rx.cond(
+            name == "STATS",
+            rx.box(
+                rx.cond(
+                    companies_case_studies_var.contains(company_cs.value),
+                    quote_box(company_cs.value),
+                    rx.box(
+                        stat(stat="10M+ Endpoints", text="Under Active Protection"),
+                        class_name="animate-fade flex justify-center items-center size-full animate-duration-[550ms] animate-ease-out animate-fill-both",
+                    ),
+                ),
+                class_name="flex flex-col gap-2.5 w-full h-[10.75rem] justify-between bg-slate-1 border-box p-4 overflow-hidden",
+            ),
+            rx.box(
+                # Light
+                rx.image(
+                    src=f"/landing/companies/light/{name}.svg",
+                    class_name="w-[4.75rem] h-auto pointer-events-none group-hover:grayscale-0 grayscale-[1] opacity-50 group-hover:opacity-100 transition-all dark:hidden",
+                    loading="lazy",
+                    alt=f"{name} logo",
+                ),
+                # Dark
+                rx.image(
+                    src=f"/landing/companies/dark/{name}.svg",
+                    class_name="w-[4.75rem] h-auto pointer-events-none group-hover:grayscale-0 grayscale-[1] opacity-50 group-hover:opacity-100 transition-all dark:block hidden",
+                    loading="lazy",
+                    alt=f"{name} logo",
+                ),
+                class_name=(
+                    "w-full h-[10.75rem] flex justify-center items-center bg-slate-1 border-box transition-colors group",
+                    rx.cond(
+                        companies_case_studies_var.contains(name)
+                        & companies_case_studies_var[name].get("url", None),
+                        "cursor-pointer hover:bg-violet-3 dark:hover:bg-violet-1",
+                        "hover:bg-[#fdfdfd78] dark:hover:bg-[#15161863]",
+                    ),
+                ),
+                on_mouse_enter=company_cs.set_value(name),
+                on_mouse_leave=company_cs.set_value(""),
+            ),
+        ),
+        rx.box(
+            aria_hidden=True,
+            style={
+                "border": "2px solid var(--c-violet-6)",
+                "opacity": area_opacity.value,
+                "WebkitMaskImage": f"radial-gradient(circle at {area_x_pos.value}px {area_y_pos.value}px, black 45%, transparent)",
+            },
+            class_name="pointer-events-none absolute left-0 top-0 z-10 h-full w-full border bg-[transparent] opacity-0 transition-opacity duration-500 box-border",
+        ),
+        rx.cond(
+            companies_case_studies_var.contains(name),
+            rx.cond(
+                companies_case_studies_var[name].get("url", None),
+                case_study_badge(),
+                quote_badge(),
+            ),
+        ),
+        on_mouse_enter=area_opacity.set_value(1),
+        on_mouse_leave=area_opacity.set_value(0),
+        on_mouse_move=[
+            rx.call_function(
+                area_x_pos.set_value(
+                    rx.Var(
+                        f"event.clientX - document.getElementById({id}).getBoundingClientRect().left"
+                    )
+                )
+            ),
+            rx.call_function(
+                area_y_pos.set_value(
+                    rx.Var(
+                        f"event.clientY - document.getElementById({id}).getBoundingClientRect().top"
+                    )
+                )
+            ),
+        ],
+        id=id,
+        class_name=(
+            "relative w-full group border-b border-r border-slate-3",
+            rx.cond(
+                name == "STATS",
+                "col-span-2",
+                "",
+            ),
+        ),
+        on_click=rx.cond(
+            companies_case_studies_var.contains(name)
+            & companies_case_studies_var[name].get("url", None),
+            rx.redirect(companies_case_studies_var[name].get("url", "#")),
+            rx.noop(),
+        ),
+    )
+
+
+def companies() -> rx.Component:
+    return rx.el.section(
+        rx.box(
+            *[
+                company_card(
+                    name=company,
+                    id=f"landing-company-card-{company}",
+                )
+                for company in companies_list
+            ],
+            class_name="lg:grid grid-cols-6 w-full hidden relative",
+        ),
+        rx.el.div(
+            index_companies(),
+            class_name="lg:hidden flex border-t border-slate-3 lg:border-t-0",
+        ),
+        class_name="z-0 flex flex-col justify-center items-center mx-auto w-full max-w-[64.19rem] border-slate-3 relative overflow-hidden isolate lg:border-l",
+    )
