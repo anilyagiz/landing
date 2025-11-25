@@ -208,6 +208,7 @@ def prompt_box() -> rx.Component:
         rx.el.div(
             rx.cond(
                 show_default_prompt.value,
+                rx.box(
                     rx.el.span(
                         "Scanning orbital assets...",
                         class_name="animate-[prompt-box-line] animate-duration-[200ms] animate-ease-out origin-left absolute top-3 left-5 h-10 pointer-events-none",
