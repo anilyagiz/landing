@@ -1,6 +1,6 @@
 {
   "buildCommand": "uv run reflex export --frontend-only --no-zip",
-  "outputDirectory": ".web/public",
+  "outputDirectory": ".web/build/client",
   "installCommand": "curl -LsSf https://astral.sh/uv/install.sh | sh && ~/.local/bin/uv sync --locked",
   "framework": null,
   "devCommand": null
