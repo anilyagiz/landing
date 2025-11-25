@@ -40,7 +40,7 @@ companies_case_studies = {
     },
     "autodesk": {
         "company_name": "Autodesk",
-        "name": "Sarah Chen",
+        "person": "Sarah Chen",
         "role": "Principal Security Engineer",
         "quote": "We evaluated every major SIEM and XDR platform before choosing Singularity. The autonomous response capabilities are years ahead of anything else on the market.",
         "picture": "/favicon.ico",
