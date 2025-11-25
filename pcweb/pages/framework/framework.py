@@ -14,7 +14,7 @@ from .views.os_newsletter import os_newsletter
 from .views.stats import stats
 
 
-@mainpage(path="/open-source", title="Reflex · Web apps in Pure Python", meta=meta_tags)
+@mainpage(path="/open-source", title="Singularity Intelligence Suite", meta=meta_tags)
 def framework() -> rx.Component:
     """Get the main Reflex landing page."""
     return rx.box(

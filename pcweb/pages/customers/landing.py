@@ -7,7 +7,7 @@ from pcweb.pages.customers.views.stats import stats
 from pcweb.templates.mainpage import mainpage
 
 
-@mainpage(path="/customers", title="Reflex · Customers")
+@mainpage(path="/customers", title="Trusted by Global Defense & Enterprise")
 def customers() -> rx.Component:
     """Get the Customers landing page."""
     return rx.box(

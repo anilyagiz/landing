@@ -40,10 +40,10 @@ companies_case_studies = {
     },
     "autodesk": {
         "company_name": "Autodesk",
-        "quote": "Managing security for 50,000 distributed endpoints was impossible with legacy tools. Singularity delivered autonomous defense and predictive maintenance in one unified platform.",
-        "person": "Paolo Rossi",
+        "name": "Sarah Chen",
+        "role": "Principal Security Engineer",
+        "quote": "We evaluated every major SIEM and XDR platform before choosing Singularity. The autonomous response capabilities are years ahead of anything else on the market.",
         "picture": "/favicon.ico",
-        "role": "CISO",
         "url": "/customers/autodesk",
     },
     "fastly": {

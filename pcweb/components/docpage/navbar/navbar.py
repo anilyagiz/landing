@@ -377,12 +377,12 @@ def logo() -> rx.Component:
         rx.fragment(
             rx.image(
                 src="/logos/light/reflex.svg",
-                alt="Reflex Logo",
+                alt="Singularity Logo",
                 class_name="shrink-0 block dark:hidden",
             ),
             rx.image(
                 src="/logos/dark/reflex.svg",
-                alt="Reflex Logo",
+                alt="Singularity Logo",
                 class_name="shrink-0 hidden dark:block",
             ),
         ),
@@ -452,7 +452,7 @@ def new_component_section() -> rx.Component:
                 rx.el.div(
                     ui.navigation_menu.item(
                         render_=link_item(
-                            "AI Builder",
+                            "Platform",
                             ai_builder_pages.overview.best_practices.path,
                             "builder",
                         ),
@@ -460,7 +460,7 @@ def new_component_section() -> rx.Component:
                     ),
                     ui.navigation_menu.item(
                         render_=link_item(
-                            "Open Source",
+                            "Intelligence",
                             getting_started.introduction.path,
                             "framework",
                         ),
@@ -469,7 +469,7 @@ def new_component_section() -> rx.Component:
                     ),
                     ui.navigation_menu.item(
                         render_=link_item(
-                            "Cloud", hosting_page.deploy_quick_start.path, "hosting"
+                            "Deployment", hosting_page.deploy_quick_start.path, "hosting"
                         ),
                         unstyled=True,
                     ),
@@ -478,26 +478,26 @@ def new_component_section() -> rx.Component:
                 rx.el.div(
                     ui.navigation_menu.item(
                         render_=link_item(
-                            "AI Builder",
+                            "Platform",
                             REFLEX_BUILD_URL,
                             "builder",
                         ),
                         unstyled=True,
                     ),
                     ui.navigation_menu.item(
-                        render_=link_item("Open Source", framework.path, "framework"),
+                        render_=link_item("Intelligence", framework.path, "framework"),
                         class_name="whitespace-nowrap",
                         unstyled=True,
                     ),
                     ui.navigation_menu.item(
-                        render_=link_item("Cloud", hosting_landing.path, "hosting"),
+                        render_=link_item("Deployment", hosting_landing.path, "hosting"),
                         unstyled=True,
                     ),
                     class_name="xl:flex hidden flex-row items-center gap-0 lg:gap-5 2xl:gap-7 m-0 h-full list-none",
                 ),
             ),
             ui.navigation_menu.item(
-                new_menu_trigger("Docs"),
+                new_menu_trigger("Resources"),
                 doc_section(),
                 display=rx.cond(
                     rx.State.router.page.path.contains("docs")
@@ -510,7 +510,7 @@ def new_component_section() -> rx.Component:
                 unstyled=True,
             ),
             ui.navigation_menu.item(
-                new_menu_trigger("Resources"),
+                new_menu_trigger("Community"),
                 new_resource_section(),
                 class_name="cursor-pointer",
                 unstyled=True,
@@ -533,20 +533,20 @@ def new_component_section() -> rx.Component:
             ui.navigation_menu.item(search_bar()),
             ui.navigation_menu.item(github()),
             ui.navigation_menu.item(discord(), class_name="xl:flex hidden"),
-            ui.navigation_menu.item(
-                rx.link(
-                    ui.button(
-                        "Sign In",
-                        size="sm",
-                        variant="secondary",
-                        class_name="font-semibold text-secondary-11 whitespace-nowrap",
-                    ),
-                    underline="none",
-                    is_external=True,
-                    href=f"{REFLEX_CLOUD_URL.strip('/')}/?redirect_url={REFLEX_BUILD_URL}",
-                ),
-                class_name="desktop-only",
-            ),
+            # ui.navigation_menu.item(
+            #     rx.link(
+            #         ui.button(
+            #             "Sign In",
+            #             size="sm",
+            #             variant="secondary",
+            #             class_name="font-semibold text-secondary-11 whitespace-nowrap",
+            #         ),
+            #         underline="none",
+            #         is_external=True,
+            #         href=f"{REFLEX_CLOUD_URL.strip('/')}/?redirect_url={REFLEX_BUILD_URL}",
+            #     ),
+            #     class_name="desktop-only",
+            # ),
             ui.navigation_menu.item(
                 render_=demo_form_dialog(
                     ui.button(

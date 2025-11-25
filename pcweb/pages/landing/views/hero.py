@@ -208,34 +208,21 @@ def prompt_box() -> rx.Component:
         rx.el.div(
             rx.cond(
                 show_default_prompt.value,
-                rx.el.span(
                     rx.el.span(
-                        "Analyzing satellite constellation",
+                        "Scanning orbital assets...",
                         class_name="animate-[prompt-box-line] animate-duration-[200ms] animate-ease-out origin-left absolute top-3 left-5 h-10 pointer-events-none",
                     ),
                     rx.el.span(
-                        "security posture...",
+                        "Correlating global telemetry...",
                         class_name="animate-[prompt-box-line] animate-duration-[200ms] animate-ease-out origin-left absolute top-8 left-5 h-10 animate-delay-100 animate-fill-both pointer-events-none",
                     ),
                     rx.el.span(
-                        "Cross-referencing global threat",
-                        class_name="animate-[prompt-box-line] animate-duration-[200ms] animate-ease-out origin-left absolute top-13 left-5 h-10 animate-delay-200 animate-fill-both pointer-events-none",
-                    ),
-                    rx.el.span(
-                        "intelligence feeds...",
-                        class_name="animate-[prompt-box-line] animate-duration-[200ms] animate-ease-out origin-left absolute top-18 left-5 h-10 animate-delay-300 animate-fill-both pointer-events-none",
-                    ),
-                    rx.el.span(
-                        "Initiating autonomous defense",
-                        class_name="animate-[prompt-box-line] animate-duration-[200ms] animate-ease-out origin-left absolute top-23 left-5 h-10 animate-delay-400 animate-fill-both pointer-events-none",
-                    ),
-                    rx.el.span(
-                        "protocols...",
+                        "Engaging autonomous countermeasures...",
                         # Cursor
                         rx.el.span(
                             class_name="w-0.5 h-8 bg-slate-12 animate-blink inline-block align-middle animate-fill-both animate-delay-550",
                         ),
-                        class_name="animate-[prompt-box-line] animate-duration-[200ms] animate-ease-out origin-left absolute top-28 left-5 h-10 animate-delay-500 animate-fill-both pointer-events-none",
+                        class_name="animate-[prompt-box-line] animate-duration-[200ms] animate-ease-out origin-left absolute top-13 left-5 h-10 animate-delay-200 animate-fill-both pointer-events-none",
                     ),
                     class_name="text-slate-11 dark:text-slate-9 text-xl leading-[2.5rem] font-medium cursor-text max-lg:hidden",
                 ),
@@ -340,11 +327,11 @@ def hero() -> rx.Component:
         ),
         rx.el.div(
             rx.el.h1(
-                "AI-Native Security for Every Device on Earth—and Beyond",
+                "AI-Native Defense. From Silicon to Satellite.",
                 class_name="text-secondary-12 lg:text-4xl text-3xl font-semibold text-center max-lg:text-balance",
             ),
             rx.el.h2(
-                "Autonomous defense. Predictive maintenance. Total device governance. From silicon to satellite—one unified platform.",
+                "One Platform. Total Immunity. Absolute Control. Any Device.",
                 class_name="text-secondary-10 lg:text-lg text-md font-medium text-center max-lg:text-pretty",
             ),
             class_name="flex flex-col items-center justify-center gap-3",

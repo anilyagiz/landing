@@ -48,12 +48,7 @@ CLOUD_HOSTING_FEATURES = [
         # True,
         True,
     ),
-    (
-        '"Built with Reflex" Attribution',
-        True,
-        # False,
-        False,
-    ),
+
     (
         "One-click rollbacks",
         True,

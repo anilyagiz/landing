@@ -14,7 +14,7 @@ pricing_path = "/pricing"
 
 @rx.page(
     route=pricing_path,
-    title="Reflex · Pricing",
+    title="Singularity Pricing",
     meta=hosting_meta_tags,
     on_load=MachineState.reset_machines,
 )

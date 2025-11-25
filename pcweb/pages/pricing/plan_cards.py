@@ -184,7 +184,7 @@ def pricing_cards() -> rx.Component:
                     "50 daily credits (up to 150/month)",
                 ),
                 Feature("EarthIcon", "Public apps only"),
-                Feature("CheckmarkBadge02Icon", "Built with Reflex Attribution"),
+
                 Feature("PlugSocketIcon", "Integrations"),
             ],
             ui.link(

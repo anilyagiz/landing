@@ -163,7 +163,7 @@ def footer() -> rx.Component:
                     class_name="flex flex-col gap-6",
                 ),
                 rx.text(
-                    f"© {datetime.now().year} Pynecone, Inc.",
+                    f"© {datetime.now().year} Singularity",
                     class_name="font-small text-slate-9",
                 ),
                 class_name="flex flex-col justify-between items-start gap-4 self-stretch",
