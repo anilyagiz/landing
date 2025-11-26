@@ -44,7 +44,7 @@ SPLINE_URL = "https://github.com/splinetool/react-spline"
 ENTERPRISE_DOCS_URL = "https://enterprise.reflex.dev"
 DATABRICKS_NOTION_URL = "https://reflex-dev.notion.site/reflex-x-databricks"
 DEMO_VIDEO_URL = "https://youtu.be/zCiC7EdSoVI"
-LAUNCH_VIDEO_URL = "https://www.youtube.com/watch?v=Hy3uhBVRdtk"
+LAUNCH_VIDEO_URL = "https://youtu.be/zCiC7EdSoVI"
 
 # Install urls.
 BUN_URL = "https://bun.sh"
