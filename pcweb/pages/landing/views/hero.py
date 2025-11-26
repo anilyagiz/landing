@@ -210,15 +210,15 @@ def prompt_box() -> rx.Component:
                 show_default_prompt.value,
                 rx.box(
                     rx.el.span(
-                        "Scanning orbital assets...",
+                        "Scanning assets...",
                         class_name="animate-[prompt-box-line] animate-duration-[200ms] animate-ease-out origin-left absolute top-3 left-5 h-10 pointer-events-none",
                     ),
                     rx.el.span(
-                        "Correlating global telemetry...",
+                        "Correlating threats...",
                         class_name="animate-[prompt-box-line] animate-duration-[200ms] animate-ease-out origin-left absolute top-8 left-5 h-10 animate-delay-100 animate-fill-both pointer-events-none",
                     ),
                     rx.el.span(
-                        "Engaging autonomous countermeasures...",
+                        "Engaging defense...",
                         # Cursor
                         rx.el.span(
                             class_name="w-0.5 h-8 bg-slate-12 animate-blink inline-block align-middle animate-fill-both animate-delay-550",
@@ -332,7 +332,7 @@ def hero() -> rx.Component:
                 class_name="text-secondary-12 lg:text-4xl text-3xl font-semibold text-center max-lg:text-balance",
             ),
             rx.el.h2(
-                "One Platform. Total Immunity. Absolute Control. Any Device.",
+                "One platform. Complete security. Complete control. Any device.",
                 class_name="text-secondary-10 lg:text-lg text-md font-medium text-center max-lg:text-pretty",
             ),
             class_name="flex flex-col items-center justify-center gap-3",

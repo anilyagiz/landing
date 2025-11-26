@@ -94,21 +94,45 @@ def frontend_features() -> rx.Component:
         rx.box(
             rx.box(
                 rx.el.h2(
-                    "Build your entire app in Python",
+                    "Architecture",
                     class_name="font-x-large text-slate-12 text-balance",
                 ),
                 rx.el.p(
-                    "Turn your ideas into apps lightning fast",
+                    "Built on Zero-Trust Architecture",
                     class_name="font-x-large text-slate-9 z-[1] text-balance",
                 ),
                 class_name="flex flex-col lg:border-r border-slate-3 lg:p-[5rem_6.5rem_5rem_2.5rem] lg:text-nowrap text-center lg:text-start pb-12 lg:pb-0 mt-12 lg:mt-0",
             ),
             rx.box(
-                stat(stat="1 Million+", text="Apps built with Reflex"),
+                rx.el.p(
+                    "Singularity is the only platform that secures the entire stack—from hardware firmware to cloud APIs—with end-to-end encryption and continuous verification.",
+                    class_name="font-base text-slate-11 text-pretty max-w-md",
+                ),
                 class_name="lg:px-10 lg:py-[5.5rem] py-12 w-auto border-b border-slate-3 lg:border-b-0",
             ),
             class_name="flex flex-col-reverse lg:flex-row lg:border-t border-slate-3 max-w-[64.19rem] justify-center lg:border-x w-full",
         ),
         frontend_grid(),
+        rx.box(
+            rx.box(
+                rx.box(
+                    rx.el.h3("Certified", class_name="font-smbold text-slate-9 text-sm"),
+                    rx.el.p("SOC 2 Type II Certified", class_name="font-medium text-slate-12 text-base"),
+                    class_name="flex flex-col gap-1 p-6 border border-slate-3 rounded-lg bg-slate-2",
+                ),
+                rx.box(
+                    rx.el.h3("Compliant", class_name="font-smbold text-slate-9 text-sm"),
+                    rx.el.p("ISO 27001 Compliant", class_name="font-medium text-slate-12 text-base"),
+                    class_name="flex flex-col gap-1 p-6 border border-slate-3 rounded-lg bg-slate-2",
+                ),
+                rx.box(
+                    rx.el.h3("Ready", class_name="font-smbold text-slate-9 text-sm"),
+                    rx.el.p("FedRAMP Ready", class_name="font-medium text-slate-12 text-base"),
+                    class_name="flex flex-col gap-1 p-6 border border-slate-3 rounded-lg bg-slate-2",
+                ),
+                class_name="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-[84.5rem] mt-8",
+            ),
+            class_name="w-full flex justify-center",
+        ),
         class_name="flex flex-col justify-center items-center",
     )
