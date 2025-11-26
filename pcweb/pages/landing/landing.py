@@ -20,7 +20,7 @@ from pcweb.pages.landing.views.video import video
 from pcweb.templates.mainpage import mainpage
 
 
-@mainpage(path="/", title="Reflex · Web apps in Pure Python", meta=meta_tags)
+@mainpage(path="/", title="Singularity - AI-Native Defense Platform", meta=meta_tags)
 def landing() -> rx.Component:
     return rx.el.div(
         hero(),

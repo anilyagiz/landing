@@ -4,32 +4,32 @@ from pcweb.constants import REFLEX_DOMAIN, REFLEX_DOMAIN_URL, TWITTER_CREATOR
 
 meta_tags = [
     # HTML Meta Tags
-    {"name": "application-name", "content": "Reflex"},
+    {"name": "application-name", "content": "Singularity"},
     {
         "name": "keywords",
-        "content": "reflex, python, web apps, framework, open source, frontend, backend, full stack",
+        "content": "singularity, defense, cybersecurity, autosecops, threat intelligence, web application firewall, fraud detection",
     },
     {
         "name": "description",
-        "content": "The open-source framework to build and deploy web apps using Python.",
+        "content": "AI-Native Defense Platform. From Silicon to Satellite. One platform for complete security and control.",
     },
     # Facebook Meta Tags
     {"property": "og:url", "content": REFLEX_DOMAIN_URL},
     {"property": "og:type", "content": "website"},
-    {"property": "og:title", "content": "Reflex · Web apps in Pure Python"},
+    {"property": "og:title", "content": "Singularity - AI-Native Defense Platform"},
     {
         "property": "og:description",
-        "content": "The open-source framework to build and deploy web apps using Python.",
+        "content": "AI-Native Defense Platform. From Silicon to Satellite. One platform for complete security and control.",
     },
     {"property": "og:image", "content": "/previews/index_preview.webp"},
     # Twitter Meta Tags
     {"name": "twitter:card", "content": "summary_large_image"},
     {"property": "twitter:domain", "content": REFLEX_DOMAIN},
     {"property": "twitter:url", "content": REFLEX_DOMAIN_URL},
-    {"name": "twitter:title", "content": "Reflex · Web apps in Pure Python"},
+    {"name": "twitter:title", "content": "Singularity - AI-Native Defense Platform"},
     {
         "name": "twitter:description",
-        "content": "The open-source framework to build and deploy web apps using Python.",
+        "content": "AI-Native Defense Platform. From Silicon to Satellite. One platform for complete security and control.",
     },
     {"name": "twitter:image", "content": "/previews/index_preview.webp"},
     {"name": "twitter:creator", "content": TWITTER_CREATOR},
@@ -37,7 +37,7 @@ meta_tags = [
 
 hosting_meta_tags = [
     # HTML Meta Tags
-    {"name": "application-name", "content": "Reflex"},
+    {"name": "application-name", "content": "Singularity"},
     {
         "name": "keywords",
         "content": "reflex, python, web apps, framework, open source, frontend, backend, full stack",
@@ -97,7 +97,7 @@ def create_meta_tags(
 
     return [
         # HTML Meta Tags
-        {"name": "application-name", "content": "Reflex"},
+        {"name": "application-name", "content": "Singularity"},
         {
             "name": "keywords",
             "content": "reflex, python, web apps, framework, open source, frontend, backend, full stack",
