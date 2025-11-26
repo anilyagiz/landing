@@ -530,9 +530,7 @@ def new_component_section() -> rx.Component:
             class_name="flex flex-row items-center gap-0 lg:gap-5 2xl:gap-7 m-0 h-full list-none",
         ),
         ui.navigation_menu.list(
-            ui.navigation_menu.item(search_bar()),
-            ui.navigation_menu.item(github()),
-            ui.navigation_menu.item(discord(), class_name="xl:flex hidden"),
+
             # ui.navigation_menu.item(
             #     rx.link(
             #         ui.button(
