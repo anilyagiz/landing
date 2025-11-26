@@ -22,16 +22,16 @@ REFLEX_CLOUD_URL = os.getenv("REFLEX_CLOUD_URL", "https://cloud.reflex.dev/")
 REFLEX_BUILD_URL = os.getenv("REFLEX_BUILD_URL", "https://build.reflex.dev/")
 
 PIP_URL = "https://pypi.org/project/reflex"
-GITHUB_URL = "https://github.com/reflex-dev/reflex"
-OLD_GITHUB_URL = "https://github.com/pynecone-io/pynecone"
-GITHUB_DISCUSSIONS_URL = "https://github.com/orgs/reflex-dev/discussions"
-FORUM_URL = "https://forum.reflex.dev"
-TWITTER_URL = "https://twitter.com/getreflex"
+GITHUB_URL = "https://github.com/singularityrd"
+OLD_GITHUB_URL = "https://github.com/singularityrd"
+GITHUB_DISCUSSIONS_URL = "https://github.com/orgs/singularityrd/discussions"
+FORUM_URL = "https://forum.singularityrd.com"
+TWITTER_URL = "https://twitter.com/singularityrd"
 DISCORD_URL = "https://discord.gg/T5WSbC2YtQ"
-CONTACT_URL = "mailto:contact@reflex.dev"
-CHAT_APP_URL = "https://github.com/reflex-dev/reflex-chat"
-LINKEDIN_URL = "https://www.linkedin.com/company/reflex-dev"
-YC_URL = "https://www.ycombinator.com/companies/reflex"
+CONTACT_URL = "mailto:info@singularityrd.com"
+CHAT_APP_URL = "https://github.com/singularityrd/singularity-chat"
+LINKEDIN_URL = "https://www.linkedin.com/company/singularityrd"
+YC_URL = "https://www.ycombinator.com/companies/singularityrd"
 ROADMAP_URL = "https://github.com/reflex-dev/reflex/issues/2727"
 CONTRIBUTING_URL = "https://github.com/reflex-dev/reflex/blob/main/CONTRIBUTING.md"
 REPORT_A_BUG_URL = "https://github.com/reflex-dev/reflex/issues/new?assignees=&labels=&projects=&template=bug_report.md&title="
@@ -72,18 +72,18 @@ RX_CLOUD_BACKEND = os.getenv("RX_CLOUD_BACKEND", "https://cloud-backend.reflex.d
 RX_BUILD_BACKEND = os.getenv("RX_BUILD_BACKEND", "https://build-backend.reflex.dev/")
 
 # Stats
-GITHUB_STARS = 27000
-DISCORD_USERS = 7500
-CONTRIBUTORS = 200
+GITHUB_STARS = 15000
+DISCORD_USERS = 5000
+CONTRIBUTORS = 150
 
 MAX_FILE_SIZE_MB = 5
 MAX_FILE_SIZE_BYTES = MAX_FILE_SIZE_MB * 1024 * 1024
 MAX_IMAGES_COUNT = 5
 
 PROMPT_MAP = {
-    "Use an Image": "Build an app from a reference image",
-    "Chat App": "A chat app hooked up to an LLM",
-    "Live Dashboard": "Live stream data on a real-time dashboard",
+    "Threat Analysis": "Analyze security threats with AI-powered insights",
+    "Incident Response": "Automated incident response and remediation",
+    "Security Dashboard": "Real-time threat monitoring and analytics",
 }
 
 CONTRIBUTION_URL = "https://github.com/reflex-dev/reflex/issues?q=is%3Aopen+is%3Aissue+label%3A%22good+first+issue%22"
@@ -92,9 +92,9 @@ BUGS_URL = "https://github.com/reflex-dev/reflex/issues?q=is%3Aopen+is%3Aissue"
 SPLINE_SCENE_URL = "https://prod.spline.design/Br2ec3WwuRGxEuij/scene.splinecode"
 SPLINE_RUNTIME_VERSION = "1.5.5"
 
-REFLEX_DOMAIN_URL = "https://reflex.dev/"
-REFLEX_DOMAIN = "reflex.dev"
-TWITTER_CREATOR = "@getreflex"
+REFLEX_DOMAIN_URL = "https://singularityrd.com/"
+REFLEX_DOMAIN = "singularityrd.com"
+TWITTER_CREATOR = "@singularityrd"
 
 # Posthog
 POSTHOG_API_KEY = os.getenv("POSTHOG_API_KEY")
