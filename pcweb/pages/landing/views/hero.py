@@ -328,7 +328,7 @@ def hero() -> rx.Component:
         ),
         rx.el.div(
             rx.el.h1(
-                "AI-Native Defense. From Silicon to Satellite.",
+                "AI-Native Security for Every Device on Earth—and Beyond",
                 class_name="text-secondary-12 lg:text-4xl text-3xl font-semibold text-center max-lg:text-balance",
             ),
             rx.el.h2(

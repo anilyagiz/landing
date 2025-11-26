@@ -85,7 +85,7 @@ def user_profile():
             class_name="size-10 bg-violet-5 dark:bg-[#E1D9FF] rounded-full border border-violet-7 overflow-hidden",
         ),
         rx.el.span(
-            "Amelia Wong",
+            "SecOps Director",
             class_name="text-slate-12 text-sm font-semibold",
         ),
         get_icon("arrow-fill-down", class_name="size-4 text-slate-9 -ml-2"),
@@ -104,13 +104,13 @@ def slack_alert():
         ),
         rx.el.div(
             rx.el.p(
-                "New message from Reflex",
+                "Singularity Alert",
                 class_name="text-slate-12 text-sm font-semibold",
             ),
             rx.el.p(
-                "Metrics reached critical level of 93%",
+                "Threat level exceeded 93%",
                 rx.el.br(),
-                "Please, check it.",
+                "Immediate review required.",
                 class_name="text-slate-11 text-xs font-medium word-wrap",
             ),
             class_name="flex flex-col",
@@ -179,12 +179,12 @@ def metrics_header():
         ),
         rx.el.div(
             rx.el.span(
-                "Metrics",
+                "Threat Level",
                 class_name="text-slate-12 text-lg font-semibold",
             ),
             rx.el.div(
                 get_icon("alert"),
-                "Critical Level",
+                "Critical Threat",
                 class_name=f"text-red-10 dark:text-white bg-red-2 dark:bg-[#641723] border-red-6 dark:border-[#641723] border flex flex-row items-center gap-1.5 text-xs font-medium rounded-md px-1.5 h-[24px] animate-delay-{DELAY_METRICS_BADGE} animate-duration-{DURATION_METRICS_BADGE} animate-slide-in-right animate-ease-out",
             ),
             class_name="flex flex-col gap-2",
