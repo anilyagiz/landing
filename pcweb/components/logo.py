@@ -5,13 +5,13 @@ def logo(class_name: str = "") -> rx.Component:
     return rx.link(
         rx.fragment(
             rx.image(
-                src="/logos/light/reflex.svg",
-                alt="Reflex Logo",
+                src="/logos/light/logo.svg",
+                alt="Singularity Logo",
                 class_name="shrink-0 block dark:hidden" + class_name,
             ),
             rx.image(
-                src="/logos/dark/reflex.svg",
-                alt="Reflex Logo",
+                src="/logos/dark/logo.svg",
+                alt="Singularity Logo",
                 class_name="shrink-0 hidden dark:block" + class_name,
             ),
         ),
