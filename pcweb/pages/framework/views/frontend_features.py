@@ -41,8 +41,8 @@ def frontend_card(
 def frontend_grid() -> rx.Component:
     return rx.box(
         frontend_card(
-            title="60+ Defense-Grade Modules",
-            description="Modular by design. Integrate any security tool or protocol.",
+            title="Modular Security Framework",
+            description="60+ integrated defense modules. Deploy unified threat intelligence, autonomous response, and predictive maintenance across your entire infrastructure.",
             image="components.svg",
             cols="2",
             height="17.5rem",
@@ -50,36 +50,36 @@ def frontend_grid() -> rx.Component:
             image_cn="min-w-fit",
         ),
         frontend_card(
-            title="Adaptive Interface",
-            description="Unified operational picture for any environment",
+            title="Unified Operations Console",
+            description="Real-time visibility across all assets. Monitor threats, manage incidents, and orchestrate response from a single command center.",
             image="colors.svg",
             height="19.5rem",
             top="7rem",
         ),
         frontend_card(
-            title="Mission-Critical UI",
-            description="Tailored dashboards for specific threat landscapes",
+            title="Context-Aware Dashboards",
+            description="Adaptive interfaces that respond to your environment. Custom views for SOC teams, threat hunters, compliance officers, and executive leadership.",
             image="ui.svg",
             height="17.5rem",
             top="6.5rem",
         ),
         frontend_card(
-            title="Dark Mode / Stealth Mode",
-            description="Optimized for low-light SOC environments",
+            title="Stealth Operations Mode",
+            description="Combat-ready interface for continuous threat surveillance. Enhanced threat detection with zero visual fatigue during extended operations.",
             image="dark_light_mode.svg",
             height="19.5rem",
             top="5rem",
         ),
         frontend_card(
-            title="Field Deployable",
-            description="Operational on any device, from HQ to the tactical edge",
+            title="Deploy Anywhere",
+            description="From corporate headquarters to remote facilities and tactical operations. Full security capabilities on any device, online or offline.",
             image="responsive.svg",
             height="19.5rem",
             top="5rem",
         ),
         frontend_card(
-            title="Universal Integration",
-            description="Seamlessly integrate with existing defense stacks and identity providers",
+            title="Seamless Integration",
+            description="Connect with your existing security stack, identity providers, SIEM platforms, and enterprise tools through native integrations and open APIs.",
             image="react.svg",
             cols="2",
             height="20rem",
@@ -105,7 +105,7 @@ def frontend_features() -> rx.Component:
             ),
             rx.box(
                 rx.el.p(
-                    "Singularity is the only platform that secures the entire stack—from hardware firmware to cloud APIs—with end-to-end encryption and continuous verification.",
+                    "Full-spectrum security from silicon to satellite. Every endpoint, every protocol, every threat surface secured with continuous verification and defense-in-depth architecture.",
                     class_name="font-base text-slate-11 text-pretty max-w-md",
                 ),
                 class_name="lg:px-10 lg:py-[5.5rem] py-12 w-auto border-b border-slate-3 lg:border-b-0",

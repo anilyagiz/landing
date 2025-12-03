@@ -21,7 +21,7 @@ def get_sidebar_items_enterprise_usage():
             names="Configuration",
             children=[
                 SideBarItem(
-                    names="Built with Reflex",
+                    names="Secure with Singularity",
                     link=enterprise.built_with_reflex.path,
                 ),
                 SideBarItem(
