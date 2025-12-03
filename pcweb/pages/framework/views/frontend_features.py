@@ -42,7 +42,7 @@ def frontend_grid() -> rx.Component:
     return rx.box(
         frontend_card(
             title="Modular Security Framework",
-            description="60+ integrated defense modules. Deploy unified threat intelligence, autonomous response, and predictive maintenance across your entire infrastructure.",
+            description="60+ integrated defense modules. Deploy threat intelligence, autonomous response, and predictive maintenance across your infrastructure.",
             image="components.svg",
             cols="2",
             height="17.5rem",
@@ -51,21 +51,21 @@ def frontend_grid() -> rx.Component:
         ),
         frontend_card(
             title="Unified Operations Console",
-            description="Real-time visibility across all assets. Monitor threats, manage incidents, and orchestrate response from a single command center.",
+            description="Real-time visibility across all assets. Monitor threats, manage incidents, and orchestrate unified response.",
             image="colors.svg",
             height="19.5rem",
             top="7rem",
         ),
         frontend_card(
             title="Context-Aware Dashboards",
-            description="Adaptive interfaces that respond to your environment. Custom views for SOC teams, threat hunters, compliance officers, and executive leadership.",
+            description="Adaptive interfaces for your environment. Custom views for SOC teams, threat hunters, compliance, and leadership.",
             image="ui.svg",
             height="17.5rem",
             top="6.5rem",
         ),
         frontend_card(
             title="Stealth Operations Mode",
-            description="Combat-ready interface for continuous threat surveillance. Enhanced threat detection with zero visual fatigue during extended operations.",
+            description="Combat-ready interface for continuous surveillance. Enhanced threat detection with zero visual fatigue.",
             image="dark_light_mode.svg",
             height="19.5rem",
             top="5rem",
